@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro Timer</title>
+    <!-- Google Fonts: Inter -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="background-animation"></div>
+    
+    <header class="app-header">
+        <h1>Pomodorro</h1>
+        <button id="theme-toggle" aria-label="Toggle Dark Mode">
+            <i class="fas fa-moon"></i>
+        </button>
+    </header>
+
+    <main class="container">
+        <div class="glass-card">
+            <div class="status-indicator">
+                <span id="mode-text">Focus Time</span>
+                <div class="mode-dots">
+                    <span class="dot active" id="dot-work"></span>
+                    <span class="dot" id="dot-break"></span>
+                </div>
+            </div>
+
+            <div class="timer-display">
+                <svg class="progress-ring" width="250" height="250">
+                    <circle class="progress-ring__circle-bg" stroke="currentColor" stroke-width="8" fill="transparent" r="115" cx="125" cy="125"/>
+                    <circle class="progress-ring__circle" id="progress" stroke="currentColor" stroke-width="8" fill="transparent" r="115" cx="125" cy="125"/>
+                </svg>
+                <div class="time-text" id="time-display">25:00</div>
+            </div>
+
+            <div class="controls">
+                <button class="control-btn secondary-btn" id="reset-btn" aria-label="Reset Timer">
+                    <i class="fas fa-redo-alt"></i>
+                </button>
+                <button class="control-btn primary-btn" id="play-pause-btn" aria-label="Play/Pause Timer">
+                    <i class="fas fa-play" id="play-icon"></i>
+                </button>
+                <button class="control-btn secondary-btn" id="skip-btn" aria-label="Skip to next session">
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+            
+            <div class="session-counter">
+                <span id="session-count">Sessions completed: 0</span>
+            </div>
+        </div>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
